@@ -51,7 +51,7 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
         if (length(username) > 1) {
           NULL # MULTIPLE USERS: dont allow to set all users admin
         } else {
-	  radioButton(inputId=ns(x),
+	  radioButtons(inputId=ns(x),
 		      label="Admin type:",
 		      choices=c("Admin1","Admin2","Normal"),
 		      selected="Normal")
