@@ -51,11 +51,15 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
         if (length(username) > 1) {
           NULL # MULTIPLE USERS: dont allow to set all users admin
         } else {
-          checkboxInput(
-            inputId = ns(x),
-            label = R.utils::capitalize(lan$get("admin")),
-            value = isTRUE(all(as.logical(data_user[[x]])))
-          )
+	  radioButton(inputId=ns(x),
+		      label="Admin type:",
+		      choices=c("Admin1","Admin2","Normal"),
+		      selected="Normal")
+          #checkboxInput(
+          #  inputId = ns(x),
+          #  label = R.utils::capitalize(lan$get("admin")),
+          #  value = isTRUE(all(as.logical(data_user[[x]])))
+          #)
         }
       } else {
         if (!is.null(inputs_list) && x %in% names(inputs_list) &&
