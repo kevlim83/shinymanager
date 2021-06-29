@@ -52,9 +52,9 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
           NULL # MULTIPLE USERS: dont allow to set all users admin
         } else {
 	  radioButtons(inputId=ns(x),
-		      label="Admin type:",
-		      choices=c("Admin1","Admin2","Normal"),
-		      selected="Normal")
+		      label="权限管理:",
+		      choices=c("集团管理员","工厂管理员","工厂操作员"),
+		      selected="工厂操作员")
           #checkboxInput(
           #  inputId = ns(x),
           #  label = R.utils::capitalize(lan$get("admin")),
