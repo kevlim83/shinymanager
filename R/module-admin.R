@@ -180,9 +180,11 @@ admin <- function(input, output, session, sqlite_path, passphrase, lan,
     users$Remove <- input_btns(ns("remove_user"), users$user, "Delete user", icon("trash-o"), status = "danger", lan = lan())
     users$Select <- input_checkbox_ui(ns("select_mult_users"), users$user)
     names_lan <- sapply(names(users), function(x) lan()$get(x))
-    change <- as.logical(users$admin)
-    users[change, "admin"] <- lan()$get("Yes")
-    users[!change, "admin"] <- lan()$get("No")
+    #previously change is a character converted to logical, then assigned a Yes/No value based on language
+    #here we reflect admin status as a character
+    #change <- as.logical(users$admin)
+    #users[change, "admin"] <- lan()$get("Yes")
+    #users[!change, "admin"] <- lan()$get("No")
     datatable(
       data = users,
       colnames = make_title(names_lan),
