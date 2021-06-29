@@ -53,7 +53,8 @@
       isTRUE(token %in% private$tokens)
     },
     is_admin = function(token) {
-      isTRUE(as.logical(private$tokens_user[[token]]$admin))
+      #modified 210629 admin is now a string, if normal false, otherwise true
+      isTRUE(as.logical(ifelse(private$tokens_user[[token]]$admin,"Normal",FALSE,TRUE)))
     },
     get = function(token) {
       info <- private$tokens_user[[token]]
