@@ -145,7 +145,7 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
     input_list[[length(input_list) + 1]] <- selectInput(
       inputId = ns("department"),
       label = "Department",
-      choices = c("GZH","WIC"),
+      choices = c("SZO", "YYG", "HZH", "FCG", "ZHZ", "ZHK", "GHN", "YNT", "GZH", "TJN", "CHJ", "SHF", "WHN", "WUW", "QZH", "QDO", "NCH", "SHG", "TZH", "HRB"),
       selected = "GZH"
     )
   } else  if (length(username) == 1) {
