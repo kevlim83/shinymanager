@@ -502,6 +502,8 @@ admin <- function(input, output, session, sqlite_path, passphrase, lan,
   })
 
   # write in database the new user and display his password
+  # newuser is a dataframe represented by input captured
+  # info will be added to: credentials and pwd_mngt, add a new function to userprofile
   observeEvent(input$added_user, {
     users <- users()
     newuser <- value_added$user
@@ -511,9 +513,14 @@ admin <- function(input, output, session, sqlite_path, passphrase, lan,
     } else {
       must_change <- as.character(TRUE)
     }
+
+    alias<-newuser$alias
+    department<-newuser$department
+    user<-newuser$user
+    
     conn <- dbConnect(SQLite(), dbname = sqlite_path)
     on.exit(dbDisconnect(conn))
-
+    
     # password <- generate_pwd()
     # newuser$password <- password
     res_add <- try({
@@ -535,6 +542,8 @@ admin <- function(input, output, session, sqlite_path, passphrase, lan,
         stringsAsFactors = FALSE
       ))
       write_db_encrypt(conn = conn, value = resetpwd, name = "pwd_mngt", passphrase = passphrase)
+      #try to insert into userprofile
+      dbExecute(conn,paste0("insert into userprofile (username,image,fullname,department) values ('",user,"',NULL,'",alias,"','",department,"')"))
     }, silent = FALSE)
     if (inherits(res_add, "try-error")) {
       showNotification(ui = lan()$get("Failed to update user"), type = "error")

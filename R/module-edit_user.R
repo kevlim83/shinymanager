@@ -123,7 +123,7 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
     }
   )
 
-  # add new user
+  # add new user modified to include userprofile
   if (is.null(username)) {
     input_list[[length(input_list) + 1]] <- textInput(
       inputId = ns("password"),
@@ -135,6 +135,18 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
       inputId = ns("must_change"),
       label = lan$get("Ask to change password"),
       value = TRUE
+    )
+    input_list[[length(input_list) + 1]] <- textInput(
+      inputId = ns("alias"),
+      label = "Alias",
+      value = NULL,
+      width = "100%"
+    )
+    input_list[[length(input_list) + 1]] <- selectInput(
+      inputId = ns("department"),
+      label = "Department",
+      choices = c("GZH","WIC"),
+      selected = "GZH"
     )
   } else  if (length(username) == 1) {
     # add checkbox to authorized NULL value
