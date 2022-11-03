@@ -151,7 +151,6 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
                   "TZH",	"WUW",	"WZH",	"YNT",	"YNZ",	"YYG",	"DGN",	"ZHK",
                   "XPG",	"ZJG",	"QZH",	"SHF",	"YKO",	"SHO",	"JIL",	"JMS",
                   "LYS",	"R&D",	"SHS",	"FUY",	"KAY", "WIC"),
-      #choices = c("SZO", "YYG", "HZH", "FCG", "ZHZ", "ZHK", "GHN", "YNT", "GZH", "TJN", "CHJ", "SHF", "WHN", "WUW", "QZH", "QDO", "NCH", "SHG", "TZH", "HRB","WIC"),
       selected = "GZH"
     )
   } else  if (length(username) == 1) {
