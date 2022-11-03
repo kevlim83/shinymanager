@@ -150,7 +150,7 @@ edit_user_ui <- function(id, credentials, username = NULL, inputs_list = NULL, l
                   "WHN",	"CHQ",	"FCG",	"GHN",	"GZH",	"PJF",	"QHD",	"SHG",
                   "TZH",	"WUW",	"WZH",	"YNT",	"YNZ",	"YYG",	"DGN",	"ZHK",
                   "XPG",	"ZJG",	"QZH",	"SHF",	"YKO",	"SHO",	"JIL",	"JMS",
-                  "LYS",	"R&D",	"SHS",	"FUY",	"KAY", "WIC")
+                  "LYS",	"R&D",	"SHS",	"FUY",	"KAY", "WIC"),
       #choices = c("SZO", "YYG", "HZH", "FCG", "ZHZ", "ZHK", "GHN", "YNT", "GZH", "TJN", "CHJ", "SHF", "WHN", "WUW", "QZH", "QDO", "NCH", "SHG", "TZH", "HRB","WIC"),
       selected = "GZH"
     )
