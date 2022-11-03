@@ -63,7 +63,20 @@ admin_ui <- function(id, lan = NULL) {
         ),
 
         tags$br(),
-
+        
+        # tags$h3(icon("industry"),lan$get("Factory"),class="text-primary"),
+        # tags$hr(),
+        # 
+        # actionButton(
+        #   inputId = ns("add_factory"),
+        #   label = lan$get("Add a factory"),
+        #   icon = icon("plus"),
+        #   width = "100%",
+        #   class = "btn-primary"
+        # )
+        # 
+        # tags$br(),
+        
         tags$h3(icon("key"), lan$get("Passwords"), class = "text-primary"),
         tags$hr(),
 
